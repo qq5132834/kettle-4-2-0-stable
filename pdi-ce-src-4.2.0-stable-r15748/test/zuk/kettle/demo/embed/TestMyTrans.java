@@ -12,7 +12,7 @@ import org.pentaho.di.trans.TransMeta;
  * @author admin
  *
  */
-public class Test {
+public class TestMyTrans {
 	
 	public static void main(String[] args)  {
 		try {
