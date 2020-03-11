@@ -14,24 +14,15 @@ import org.pentaho.di.trans.TransMeta;
  */
 public class TestMyTrans {
 	
-	public static void main(String[] args)  {
-		try {
-			KettleEnvironment.init();
-		} catch (KettleException e) {
-			e.printStackTrace();
-		}
-		TransMeta tm = null;
-		try {
-			tm = new TransMeta("F:/gitlib/kettle-4-2-0-stable/pdi-ce-src-4.2.0-stable-r15748/test/zuk/kettle/demo/embed/trans.ktr");
-		} catch (KettleXMLException e) {
-			e.printStackTrace();
-		}
+	public static void main(String[] args) throws KettleException  {
+		KettleEnvironment.init();
+		TransMeta tm = new TransMeta("F:/gitlib/kettle-4-2-0-stable/pdi-ce-src-4.2.0-stable-r15748/test/zuk/kettle/demo/embed/trans.ktr");
 		Trans t = new Trans(tm);
-		try {
-			t.execute(null);
-		} catch (KettleException e) {
-			e.printStackTrace();
-		}
+		String[] arguments = null;
+		//		t.execute(null);
+//		t.waitUntilFinished();
+		t.prepareExecution(arguments);
+		t.startThreads();
 		t.waitUntilFinished();
 	}
 
