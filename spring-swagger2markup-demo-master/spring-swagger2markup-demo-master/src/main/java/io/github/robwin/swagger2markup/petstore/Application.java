@@ -19,6 +19,12 @@ import com.fasterxml.jackson.module.afterburner.AfterburnerModule;
 @SpringBootApplication
 public class Application {
 
+	/***
+	 * 生成odoc、html、pdf文档，用maven install命令即可
+	 * 文件输出在target中
+	 * 
+	 * @param args
+	 */
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
